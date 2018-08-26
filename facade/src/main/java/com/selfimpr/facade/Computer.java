@@ -24,19 +24,19 @@ public class Computer {
     }
 
     public void startup() {
-        Log.e("facade", "start the computer!");
+        Log.e("facade", " -----> start the computer!");
         cpu.startup();
         memory.startup();
         disk.startup();
-        Log.e("facade", "start computer finished!");
+        Log.e("facade", " -----> start computer finished!");
 
     }
 
     public void shutdown() {
-        Log.e("facade", "begin to close the computer!");
+        Log.e("facade", " -----> begin to close the computer!");
         cpu.shutdown();
         memory.shutdown();
         disk.shutdown();
-        Log.e("facade", "computer closed!");
+        Log.e("facade", " -----> computer closed!");
     }
 }

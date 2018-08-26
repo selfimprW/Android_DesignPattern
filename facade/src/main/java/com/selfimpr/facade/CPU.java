@@ -1,5 +1,7 @@
 package com.selfimpr.facade;
 
+import android.util.Log;
+
 /**
  * description：   <br/>
  * ===============================<br/>
@@ -13,11 +15,11 @@ package com.selfimpr.facade;
 public class CPU implements IOperate {
     @Override
     public void startup() {
-
+        Log.e("facade", "CPU startup!");
     }
 
     @Override
     public void shutdown() {
-
+        Log.e("facade", "CPU shutdown!");
     }
 }
