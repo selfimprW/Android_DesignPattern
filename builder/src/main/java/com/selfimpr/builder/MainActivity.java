@@ -21,16 +21,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MealBuilder mealBuilder = new MealBuilder();
+        MealBuilder vegBuilder = new MealBuilder();
+        Meal vegMeal = vegBuilder.addItem(new VegBurger())
+                .addItem(new Coke())
+                .build();
 
-        Meal vegMeal = mealBuilder.prepareVegMeal();
         Log.e("builder", "Veg Meal:");
         vegMeal.showItems();
         Log.e("builder", "Total Cost: " + vegMeal.getCost());
 
-        Meal nonVegMeal = mealBuilder.prepareNonVegMeal();
-        Log.e("builder", "Non-Veg Meal:");
-        nonVegMeal.showItems();
-        Log.e("builder", "Total Cost: " + nonVegMeal.getCost());
+        MealBuilder chickenBuilder = new MealBuilder();
+        Meal chickenMeal = chickenBuilder.addItem(new ChickenBurger())
+                .addItem(new Pepsi())
+                .build();
+        Log.e("builder", "chickenMeal:");
+        chickenMeal.showItems();
+        Log.e("builder", "Total Cost: " + chickenMeal.getCost());
     }
 }

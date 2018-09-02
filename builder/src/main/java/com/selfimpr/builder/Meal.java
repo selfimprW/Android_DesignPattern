@@ -2,7 +2,6 @@ package com.selfimpr.builder;
 
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,10 +15,10 @@ import java.util.List;
  * Modify time：  <br/>
  */
 public class Meal {
-    private List<Item> items = new ArrayList<>();
+    private List<Item> items;
 
-    public void addItem(Item item) {
-        items.add(item);
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public float getCost() {

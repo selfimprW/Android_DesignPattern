@@ -1,5 +1,8 @@
 package com.selfimpr.builder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * description：   <br/>
  * ===============================<br/>
@@ -11,17 +14,16 @@ package com.selfimpr.builder;
  * Modify time：  <br/>
  */
 public class MealBuilder {
-    public Meal prepareVegMeal() {
-        Meal meal = new Meal();
-        meal.addItem(new VegBurger());
-        meal.addItem(new Coke());
-        return meal;
+    private List<Item> items = new ArrayList<>();
+
+    public MealBuilder addItem(Item item) {
+        items.add(item);
+        return this;
     }
 
-    public Meal prepareNonVegMeal() {
+    public Meal build() {
         Meal meal = new Meal();
-        meal.addItem(new ChickenBurger());
-        meal.addItem(new Pepsi());
+        meal.setItems(items);
         return meal;
     }
 }
